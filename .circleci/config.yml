@@ -17,9 +17,9 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      - run:
-          name: "Build"
-          command: "npm run build"
+
+orbs:
+  node: circleci/node@5.1.0
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -27,3 +27,9 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+  example-workflow:
+    jobs:
+      - node/run:
+          pkg-manager: npm 
+          resource_class: large 
+
