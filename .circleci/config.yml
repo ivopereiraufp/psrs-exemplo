@@ -30,6 +30,5 @@ workflows:
   example-workflow:
     jobs:
       - node/run:
-          pkg-manager: npm 
-          resource_class: large 
+          npm-run: start
 
